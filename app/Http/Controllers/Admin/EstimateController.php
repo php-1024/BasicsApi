@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\Open\Estimate;
+use App\Http\Requests\Merchant\Estimate;
 use App\Models\AccountApplyWithdraw;
 use App\Models\AccountApplyWithdrawLog;
 use App\Models\BankInfo;

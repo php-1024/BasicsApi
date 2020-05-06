@@ -37,6 +37,8 @@ class RouteServiceProvider extends ServiceProvider
     {
         // admin后台路由
         $this->mapAdminRoutes();
+        // merchant后台路由
+        $this->mapMerchantRoutes();
         // 默认web自带路由
         $this->mapWebRoutes();
 
@@ -65,5 +67,15 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix('api')
             ->namespace($this->namespace)
             ->group(base_path('routes/admin.php'));
+    }
+
+    /**
+     * merchant合作商路由
+     */
+    protected function mapMerchantRoutes()
+    {
+        Route::prefix('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/merchant.php'));
     }
 }
