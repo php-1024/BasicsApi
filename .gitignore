@@ -1,0 +1,7 @@
+/vendor
+/.idea
+/public/.htaccess
+/public/git_pull.php
+/public/uploads
+/storage
+composer.lock

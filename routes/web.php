@@ -1,0 +1,25 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::any('/', function () {
+    return view('pass');
+});
+
+Route::get('phpinfo', function () {
+    phpinfo();
+});
+Route::get('test', function () {
+    $qrcode_url = "http://mmbiz.qpic.cn/mmbiz_jpg/2Uw5rqyC73bhPJNPtxnoP9rVhJmbM4ib7VQXKt7rbLicfGHfsibHeHZiaIqDBiae3LTtfBl2BYaWOsGS4aibAVrR5g2Q/0";
+    $ext        = strrchr($qrcode_url, '.');
+    \App\Library\Upload::download($qrcode_url, "./uploads/wechat/", "1.jpg");
+});
