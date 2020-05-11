@@ -22,7 +22,7 @@
     "zoujingli/ip2region": "^1.0"
   },
   "require-dev": {
-    "iszmxw/try-make-package": "dev-master",
+    "iszmxw/mysql-markdown": "dev-master",
     "barryvdh/laravel-debugbar": "^3.2",
     "barryvdh/laravel-ide-helper": "^2.6",
     "filp/whoops": "~2.0",
