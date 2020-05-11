@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Library\Logs;
 use App\Models\Account;
 use App\Models\LoginLog;
+use App\Models\OfficialAccount;
 use App\Models\OperationLog;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -78,11 +79,11 @@ class DashboardController extends Controller
      */
     public function statistics(Request $request)
     {
-        // 合作商户
+        // 合作商户数量
         $company_total = Account::getCount(['level' => 2]);
-        // 吸粉客户
-        $hifans_total = User::getCount();
-        return ['code' => 20000, 'data' => ['company_total' => $company_total, 'hifans_total' => $hifans_total]];
+        // 公众号数量
+        $official_total = OfficialAccount::getCount();
+        return ['code' => 20000, 'data' => ['company_total' => $company_total, 'official_total' => $official_total]];
     }
 
 

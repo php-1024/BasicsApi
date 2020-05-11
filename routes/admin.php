@@ -39,6 +39,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
         Route::any('list', 'MerchantController@list');
         Route::any('edit', 'MerchantController@edit');
         Route::any('status', 'MerchantController@status');
+        // 门店管理
+        Route::group(['prefix' => 'store'], function () {
+            // 获取门店类型（场景）
+            Route::any('get_scene', 'StoreController@get_scene');
+            // 获取单条门店信息
+            Route::any('get_store_info', 'StoreController@get_store_info');
+            // 保存门店信息
+            Route::any('save_store_info', 'StoreController@save_store_info');
+        });
     });
 
 
